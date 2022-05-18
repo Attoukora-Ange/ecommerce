@@ -1,0 +1,31 @@
+<%- include('../includes/header')  %>
+<div class="barre_recherche">
+  <form action="" method="post">
+    <input type="text" placeholder="Rechercher produit...">
+    <button>Recherche</button>
+  </form>
+</div>
+<div class="detail_produit">
+  <div class="titre_detail"><%= detailProduit.designation %></div>
+  <div class="detail">
+    <div class="left">
+      <img src="/images/produits/<%= detailProduit.photo_produit %>" alt="">
+    </div>
+    <div class="right">
+      <div class="cat_produit">Catégorie: <%= detailProduit.categorie %></div>
+      <div class="mar_produit">Marque: <%= detailProduit.marque %></div>
+      <div class="pour_produit">Réduction: - <%= detailProduit.pourcentage_reduction %> %</div>
+      <div class="prix_produit">Prix: <%= detailProduit.reduction_prix %> f CFA</div>
+      <div class="ajout_produit">
+        <form action="/add_panier/<%= detailProduit._id%>" method="post">
+          <button>Ajouter au panier</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="infos_produit">
+    <div class="descs_produit">Description du produit</div>
+    <div class="aff_desc_produit"><%= detailProduit.description %></div>
+  </div>
+</div>
+<%- include('../includes/footer')  %>

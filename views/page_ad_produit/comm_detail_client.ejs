@@ -1,0 +1,50 @@
+<%- include('../includes/header')  %>
+<div class="barre_recherche">
+  <form action="" method="post">
+    <input type="text" placeholder="Rechercher produit...">
+    <button>Recherche</button>
+  </form>
+</div>
+
+<div class="voir_panier">
+  <div class="titre_panier">Commande détailée des clients</div>
+  <% Commande_client.forEach(commande => { %>
+  <div class="nom_client">Nom: <%= commande.nom %> <%= commande.prenom %> / Adresse réception: <%= commande.addresse_reception %> / Total: <%= commande.prix_total %> f</div>
+  <% }) %>
+  <div class="panier">
+    <table>
+      <thead>
+        <tr>
+          <th>Images</th>
+          <th>Désignations</th>
+          <th>Quantités</th>
+          <th>Prix</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% Commande_client.forEach(commande => { %>
+        <tr>
+          <% for( let i = 0; i < commande.photo_produit.length; i++ ) { %>
+        <tr>
+          <td><img src="/images/produits/<%= commande.photo_produit[i] %>" alt=""></td>
+          <td><%= commande.designation[i] %></td>
+          <td><%= commande.quantite[i] %></td>
+          <td><%= commande.reduction_prix[i] %></td>
+        </tr>
+        </tr>
+        <% } %>
+        <% }) %>
+
+      </tbody>
+    </table>
+    <div class="envoi">
+      <% Commande_client.forEach(commande => { %>
+      <form action="/admin/valider_commande/<%= commande._id%>?_method=DELETE" method="post">
+        <button>Valider la commande</button>
+      </form>
+      <% }) %>
+    </div>
+  </div>
+</div>
+
+<%- include('../includes/footer')  %>

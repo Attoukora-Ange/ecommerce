@@ -1,0 +1,197 @@
+<%- include('includes/header.ejs')  %>
+<div class="barre_recherche">
+  <form action="" method="post">
+    <input type="text" placeholder="Rechercher produit...">
+    <button>Recherche</button>
+  </form>
+</div>
+<div class="menu_general">
+  <div class="left">
+    <div class="menu_left">
+      <ul>
+        <li><a href="">Portable / Tablette</a>
+          <div class="second_menu">
+            <ul>
+              <li><a href="">Samsung</a></li>
+              <li><a href="">Iphone</a></li>
+              <li><a href="">Infinix</a></li>
+              <li><a href="">BlackBerry</a></li>
+              <li><a href="">Techno</a></li>
+              <li><a href="">Itel</a></li>
+            </ul>
+          </div>
+        </li>
+        <li><a href="">Electronique</a>
+          <div class="second_menu">
+            <ul>
+              <li><a href="">Ordinateur</a></li>
+              <li><a href="">Télévision</a></li>
+              <li><a href="">Réfrigerateur</a></li>
+              <li><a href="">Onduleur</a></li>
+              <li><a href="">Climatiseur</a></li>
+              <li><a href="">Ventilateur</a></li>
+            </ul>
+          </div>
+        </li>
+        <li><a href="">Cuisine</a>
+          <div class="second_menu">
+            <ul>
+              <li><a href="">Verre à table</a></li>
+              <li><a href="">Ustensille</a></li>
+              <li><a href="">Torchon</a></li>
+              <li><a href="">Gazinère</a></li>
+              <li><a href="">Cuisinière</a></li>
+              <li><a href="">Mixeur</a></li>
+            </ul>
+          </div>
+        </li>
+        <li><a href="">Mode homme</a>
+          <div class="second_menu">
+            <ul>
+              <li><a href="">Vêtement</a></li>
+              <li><a href="">Ceinture</a></li>
+              <li><a href="">Montre</a></li>
+              <li><a href="">Chapeau</a></li>
+              <li><a href="">Cravatte</a></li>
+            </ul>
+          </div>
+        </li>
+        <li><a href="">Mode femme</a>
+          <div class="second_menu">
+            <ul>
+              <li><a href="">Chaîne</a></li>
+              <li><a href="">Montre</a></li>
+              <li><a href="">Chaussure</a></li>
+              <li><a href="">Vêtement</a></li>
+              <li><a href="">Sac à main</a></li>
+              <li><a href="">Boucle d'oreille</a></li>
+            </ul>
+          </div>
+        </li>
+        <li><a href="">Cosmetique</a>
+          <div class="second_menu">
+            <ul>
+              <li><a href="">Beurre de karité</a></li>
+              <li><a href="">Beurre de cacao</a></li>
+              <li><a href="">Huille d'argan</a></li>
+              <li><a href="">Huille d'eucalyptus</a></li>
+              <li><a href="">Huille de coco</a></li>
+              <li><a href="">Vasiline</a></li>
+              <li><a href="">Paraffine</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="midlle">
+    <div class="menu_midlle">
+      <ul>
+        <li><img src="images/site/affiche_1.jpg" alt="" class="opacite"></li>
+        <li><img src="images/site/affiche_2.jpg" alt=""></li>
+        <li><img src="images/site/affiche_3.jpg" alt=""></li>
+        <li><img src="images/site/affiche_4.jpg" alt=""></li>
+        <li><img src="images/site/affiche_5.jpg" alt=""></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="all_produits">
+  <div class="produit">
+    <div class="categorie">
+      <div id="portable">Portable</div>
+    </div>
+    <div class="contenue">
+      <% all_produit.forEach(produit => { %>
+      <% if (produit.categorie == 'Portable') { %>
+      <div class="ptit_cont">
+        <div class="image"><img src="images/produits/<%= produit.photo_produit%>" alt=""></div>
+        <div class="pour_reduction"> - <%= produit.pourcentage_reduction %> %</div>
+        <div class="nom_produit"><%= produit.designation %></div>
+        <div class="anc_prix_produit">Prix : <%= produit.prix %> f</div>
+        <div class="nveau_prix_produit">Prix : <%= produit.reduction_prix %> f</div>
+        <div class="btn_detail"><a href="/detail_produit/<%= produit._id %>">Voir détail</a></div>
+      </div>
+      <% } %>
+      <% }) %>
+    </div>
+  </div>
+  <div class="produit">
+    <div class="categorie">
+      <div id="electronique">Electronique</div>
+    </div>
+    <div class="contenue">
+      <% all_produit.forEach(produit => { %>
+      <% if (produit.categorie == 'Electronique') { %>
+      <div class="ptit_cont">
+        <div class="image"><img src="images/produits/<%= produit.photo_produit%>" alt=""></div>
+        <div class="pour_reduction"> - <%= produit.pourcentage_reduction %> %</div>
+        <div class="nom_produit"><%= produit.designation %></div>
+        <div class="anc_prix_produit">Prix : <%= produit.prix %> f</div>
+        <div class="nveau_prix_produit">Prix : <%= produit.reduction_prix %> f</div>
+        <div class="btn_detail"><a href="/detail_produit/<%= produit._id %>">Voir détail</a></div>
+      </div>
+      <% } %>
+      <% }) %>
+    </div>
+  </div>
+  <div class="produit">
+    <div class="categorie">
+      <div id="homme">Mode pour homme</div>
+    </div>
+    <div class="contenue">
+      <% all_produit.forEach(produit => { %>
+      <% if (produit.categorie == 'Mode pour homme') { %>
+      <div class="ptit_cont">
+        <div class="image"><img src="images/produits/<%= produit.photo_produit%>" alt=""></div>
+        <div class="pour_reduction"> - <%= produit.pourcentage_reduction %> %</div>
+        <div class="nom_produit"><%= produit.designation %></div>
+        <div class="anc_prix_produit">Prix : <%= produit.prix %> f</div>
+        <div class="nveau_prix_produit">Prix : <%= produit.reduction_prix %> f</div>
+        <div class="btn_detail"><a href="/detail_produit/<%= produit._id %>">Voir détail</a></div>
+      </div>
+      <% } %>
+      <% }) %>
+    </div>
+  </div>
+  <div class="produit">
+    <div class="categorie">
+      <div id="femme">Mode pour femme</div>
+    </div>
+    <div class="contenue">
+      <% all_produit.forEach(produit => { %>
+      <% if (produit.categorie == 'Mode pour femme') { %>
+      <div class="ptit_cont">
+        <div class="image"><img src="images/produits/<%= produit.photo_produit%>" alt=""></div>
+        <div class="pour_reduction"> - <%= produit.pourcentage_reduction %> %</div>
+        <div class="nom_produit"><%= produit.designation %></div>
+        <div class="anc_prix_produit">Prix : <%= produit.prix %> f</div>
+        <div class="nveau_prix_produit">Prix : <%= produit.reduction_prix %> f</div>
+        <div class="btn_detail"><a href="/detail_produit/<%= produit._id %>">Voir détail</a></div>
+      </div>
+      <% } %>
+      <% }) %>
+    </div>
+  </div>
+  <div class="produit">
+    <div class="categorie">
+      <div id="cosmetique">Cosmétique</div>
+    </div>
+    <div class="contenue">
+      <% all_produit.forEach(produit => { %>
+      <% if (produit.categorie == 'Cosmétique') { %>
+      <div class="ptit_cont">
+        <div class="image"><img src="images/produits/<%= produit.photo_produit%>" alt=""></div>
+        <div class="pour_reduction"> - <%= produit.pourcentage_reduction %> %</div>
+        <div class="nom_produit"><%= produit.designation %></div>
+        <div class="anc_prix_produit">Prix : <%= produit.prix %> f</div>
+        <div class="nveau_prix_produit">Prix : <%= produit.reduction_prix %> f</div>
+        <div class="btn_detail"><a href="/detail_produit/<%= produit._id %>">Voir détail</a></div>
+      </div>
+      <% } %>
+      <% }) %>
+    </div>
+  </div>
+</div>
+<script src="js/slide_image.js"></script>
+<%- include('includes/footer.ejs')  %>

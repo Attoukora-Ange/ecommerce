@@ -1,0 +1,71 @@
+<%- include('../includes/header')  %>
+<div class="barre_recherche">
+  <form action="" method="post">
+    <input type="text" placeholder="Rechercher produit...">
+    <button>Recherche</button>
+  </form>
+</div>
+<div class="voir_panier">
+  <div class="titre_panier">Votre panier</div>
+  <div class="panier">
+    <% if ((typeof panier !== 'undefined' || '' ) && typeof prix_total !='undefined') { %>
+    <% if (prix_total == 0 || panier.lenght <= 0 ) { %>
+    <div class="titre_panier">Votre panier est vide</div>
+    <% }else{%>
+    <table>
+      <thead>
+        <tr>
+          <th>Images</th>
+          <th>Désignations</th>
+          <th>Quantités</th>
+          <th>Prix</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% panier.forEach(mon_panier => { %>
+        <tr>
+          <td><img src="images/produits/<%= mon_panier.photo_produit %>" alt=""></td>
+          <td><%= mon_panier.designation %></td>
+          <td>
+            <form action="/reduct_panier" method="post">
+              <input type="hidden" name="plus" value="<%= mon_panier._id %>">
+              <button>-</button>
+            </form>
+            <span><%= mon_panier.quantite %></span>
+            <form action="/add_panier" method="post">
+              <input type="hidden" name="plus" value="<%= mon_panier._id %>">
+              <button>+</button>
+            </form>
+          </td>
+          <% total = parseInt(Number(mon_panier.quantite)  * Number(mon_panier.reduction_prix))   %>
+          <td><%= total %> f</td>
+          <td>
+            <form action="/retirer_panier" method="post">
+              <input type="hidden" name="id_sup" value="<%= mon_panier._id %>">
+              <button>Rétirer</button>
+            </form>
+          
+          </td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+    <div class="total">Total : <%= prix_total %> f</div>
+    <div class="envoi">
+      <form action="/panier_envoie" method="post">
+        <label for="addresse_reception">Adresse de reception: </label>
+        <input type="text" id="addresse_reception" placeholder="Veuillez entrer votre adresse de reception..." name="addresse_reception">
+        <button>Valider la commande</button>
+      </form>
+    </div>
+    <%} %>
+    <% }else{%>
+    <div class="titre_panier">Votre panier est vide</div>
+    <% } %>
+  </div>
+</div>
+
+
+
+<%- include('../includes/footer')  %>

@@ -1,0 +1,74 @@
+<%- include('../includes/header')  %>
+<div class="barre_recherche">
+    <form action="" method="post">
+      <input type="text" placeholder="Rechercher produit...">
+      <button>Recherche</button>
+    </form>
+  </div>
+<div class="formulaire_personne">
+<div class="formulaire">
+    <div class="titre">Ajouter un produit</div>
+    <form action="/admin/admin_creer_produit" method="post" enctype="multipart/form-data">
+        <div>
+            <div class="input_champ"></div>
+    
+        <div class="input_champ">
+            <label for="categorie">Catégorie du produit:</label>
+            <select name="categorie" id="categorie">
+                <option value="">-- Choisir --</option>
+                <option value="Portable">Portable</option>
+                <option value="Tablette">Tablette</option>
+                <option value="Electronique">Electronique</option>
+                <option value="Mode pour homme">Mode pour homme</option>
+                <option value="Mode pour femme">Mode pour femme</option>
+                <option value="Cosmétique">Cosmétique</option>
+            </select>
+        </div>
+        <div class="input_champ">
+            <label for="marque">Marque du produit:</label>
+            <select name="marque" id="marque">
+                <option value="">-- Choisir --</option>
+                <option value="Samsung">Samsung</option>
+                <option value="Iphone">Iphone</option>
+                <option value="Nokia">Nokia</option>
+                <option value="BlackBerry">BlackBerry</option>
+                <option value="Smart">Smart</option>
+                <option value="Luis Vuiton">Luis Vuiton</option>
+                <option value="Cosmétique naturel">Cosmétique naturel</option>
+                <option value="Autres">Autres</option>
+            </select>
+        </div>
+        <div class="input_champ">
+            <label for="designation">Désignation:</label>
+            <input type="text" placeholder="Entrer la désignation du produit..." id="designation" name="designation">
+        </div>
+        <div class="input_champ">
+            <label for="description">Description du produit:</label>
+            <textarea name="description" id="" cols="30" rows="10" placeholder="Description du produit..."></textarea>
+        </div>
+        <div class="input_champ">
+            <label for="prix">Prix de vente</label>
+            <input type="number" placeholder="Entrer le prix de vente du produit..." name="prix">
+        </div>
+        <div class="input_champ">
+            <label for="pourcentage_reduction">Pourcentage de reduction</label>
+            <input type="number" placeholder="Entrer le pourcentage de reduction..." name="pourcentage_reduction">
+        </div>
+        <div class="input_champ">
+            <div class="photo">
+                <label for="photo">Photo du produit</label>
+                <input type="file" id="photo" placeholder="Choisir photo du produit" name="image">
+            </div>
+        </div>
+        <div class="input_champ">
+            <label for="quantite">Quantie du produit</label>
+            <input type="number" placeholder="Entrer la quantite du produit..." name="quantite">
+        </div>
+        <div class="input_champ">
+           <button>Enregistrer</button>
+        </div>
+    </div>
+    </form>
+</div>
+</div>
+<%- include('../includes/footer')  %> 

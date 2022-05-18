@@ -1,0 +1,204 @@
+.barre_recherche {
+  display: flex;
+  justify-content: center;
+}
+.barre_recherche form {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+  width: 100%;
+  background-color: blanchedalmond;
+}
+.barre_recherche form input {
+  height: 3rem;
+  width: 25%;
+  padding: 0 1rem;
+  font-size: 1.3rem;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+.barre_recherche form button {
+  padding: 0.5rem 1rem;
+  margin: 0 1rem;
+  cursor: pointer;
+  font-size: 1.3rem;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  background-color: var(--orange);
+}
+.barre_recherche form button:hover {
+  background-color: var(--blue);
+}
+/* ************************************ */
+.menu_general .left {
+  background-color: var(--red);
+  padding: 0 10%;
+}
+.menu_general .left .menu_left ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.menu_general .left .menu_left ul li {
+  padding: 0.5rem 1rem;
+  position: relative;
+  background-color: var(--red);
+}
+.menu_general .left .menu_left ul li a {
+  color: var(--light);
+  font-size: 1.3rem;
+}
+.menu_general .left .menu_left ul li a:hover {
+  color: var(--blue);
+}
+.menu_general .left .menu_left ul li .second_menu {
+  opacity: 0;
+  width: 100px;
+}
+.menu_general .left .menu_left ul li:hover .second_menu {
+  opacity: 1;
+}
+.menu_general .left .menu_left ul li .second_menu ul {
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0%;
+  width: 100%;
+  z-index: 1;
+  background-color: var(--dark);
+}
+
+.menu_general .midlle {
+  width: 100%;
+  margin: auto;
+  min-height: calc(100vh - 250px);
+}
+.menu_general .midlle .menu_midlle {
+  width: 100%;
+  position: relative;
+}
+.menu_general .midlle .menu_midlle img {
+  width: 100%;
+  object-fit: cover;
+  max-height: calc(100vh - 250px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+.menu_general .midlle .menu_midlle img.opacite {
+  opacity: 1;
+}
+
+/* *************************** */
+.all_produits {
+  margin-top: 2%;
+}
+.all_produits .categorie {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  background-color: var(--purple);
+}
+
+.all_produits .categorie .voir_plus {
+  position: absolute;
+  top: 0;
+  right: 1rem;
+}
+.all_produits .categorie .voir_plus a {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--light);
+  text-align: center;
+}
+.all_produits .categorie .voir_plus a:hover {
+  color: var(--dark);
+}
+.all_produits .categorie div {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--light);
+  padding: 1rem 10%;
+  text-align: center;
+}
+.all_produits .produit .contenue {
+  padding: 0 10%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.all_produits .produit .contenue {
+  padding: 0 10%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.all_produits .produit .contenue .ptit_cont {
+  width: 15%;
+  position: relative;
+  padding: 1rem 0;
+}
+.all_produits .produit .contenue .ptit_cont .image {
+  width: 100%;
+  height: 185px;
+}
+.all_produits .produit .contenue .ptit_cont .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 5px;
+}
+.all_produits .produit .contenue .ptit_cont .pour_reduction {
+  position: absolute;
+  top: 1.3rem;
+  right: 0.5rem;
+  font-weight: 700;
+  color: var(--danger);
+}
+.all_produits .produit .contenue .ptit_cont .nom_produit {
+  color: var(--dark);
+  font-size: 1.2rem;
+  text-align: center;
+}
+.all_produits .produit .contenue .ptit_cont .anc_prix_produit {
+  color: var(--danger);
+  font-size: 1rem;
+  text-decoration: line-through;
+  text-align: center;
+}
+.all_produits .produit .contenue .ptit_cont .nveau_prix_produit {
+  color: var(--dark);
+  font-size: 1.2rem;
+  text-align: center;
+}
+.all_produits .produit .contenue .ptit_cont .btn_detail {
+  padding: 0.3rem 1rem;
+  background-color: var(--blue);
+  font-size: 1.2rem;
+  font-weight: 500;
+  width: 100%;
+  text-align: center;
+  border-radius: 5px;
+}
+.all_produits .produit .contenue .ptit_cont .btn_detail a {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--light);
+}
+.all_produits .produit .contenue .ptit_cont .btn_detail:hover {
+  background-color: var(--light);
+}
+.all_produits .produit .contenue .ptit_cont .btn_detail:hover > a {
+  color: var(--dark);
+}
+/* ************************************************ */
+.all_produits {
+  min-height: calc(100vh - 200px);
+}
+.espace {
+  padding: 2rem;
+}

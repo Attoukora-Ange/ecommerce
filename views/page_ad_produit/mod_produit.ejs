@@ -1,0 +1,69 @@
+<%- include('../includes/header')  %>
+<div class="barre_recherche">
+    <form action="" method="post">
+      <input type="text" placeholder="Rechercher produit...">
+      <button>Recherche</button>
+    </form>
+  </div>
+<div class="formulaire_personne">
+<div class="formulaire">
+    <div class="titre">Modifier un produit</div>
+    <form action="" method="post">
+        <div>
+            <div class="input_champ"></div>
+        <div class="input_champ">
+            <label for="">Catégorie du produit:</label>
+            <select name="" id="">
+                <option value="">-- Choisir --</option>
+                <option value="">Portable</option>
+                <option value="">Tablette</option>
+                <option value="">Electronique</option>
+                <option value="">Mode pour homme</option>
+                <option value="">Mode pour femme</option>
+                <option value="">Cosmétique</option>
+            </select>
+        </div>
+        <div class="input_champ">
+            <label for="">Marque du produit:</label>
+            <select name="" id="">
+                <option value="">-- Choisir --</option>
+                <option value="">Samsung</option>
+                <option value="">Iphone</option>
+                <option value="">Nokia</option>
+                <option value="">BlackBerry</option>
+                <option value="">Smart</option>
+                <option value="">Luis Vuiton</option>
+                <option value="">Cosmétique naturel</option>
+                <option value="">Autres</option>
+            </select>
+        </div>
+        <div class="input_champ">
+            <label for="">Désignation:</label>
+            <input type="text" placeholder="Entrer la désignation du produit...">
+        </div>
+        <div class="input_champ">
+            <label for="">Description du produit:</label>
+            <textarea name="" id="" cols="30" rows="10" placeholder="Description du produit..."></textarea>
+        </div>
+        <div class="input_champ">
+            <label for="">Prix de vente</label>
+            <input type="number" placeholder="Entrer le prix de vente du produit...">
+        </div>
+        <div class="input_champ">
+            <label for="">Pourcentage de reduction</label>
+            <input type="number" placeholder="Entrer le pourcentage de reduction...">
+        </div>
+        <div class="input_champ">
+            <div class="photo">
+                <label for="photo">Photo du produit</label>
+                <input type="file" id="photo" placeholder="Choisir photo du produit">
+            </div>
+        </div>
+        <div class="input_champ">
+           <button>Modifier</button>
+        </div>
+    </div>
+    </form>
+</div>
+</div>
+<%- include('../includes/footer')  %> 

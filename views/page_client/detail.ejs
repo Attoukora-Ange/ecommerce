@@ -1,0 +1,39 @@
+<%- include('../includes/header')  %>
+<div class="voir_panier">
+  <div class="titre_panier">Historique de mes détails de commande</div>
+  <div class="panier">
+    <table>
+      <thead>
+        <tr>
+          <th>Images</th>
+          <th>Désignations</th>
+          <th>Quantités</th>
+          <th>Prix</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% Mes_commandes.forEach(commande => { %>
+        <tr>
+          <% for( let i = 0; i < commande.photo_produit.length; i++ ) { %>
+        <tr>
+          <td><img src="/images/produits/<%= commande.photo_produit[i] %>" alt=""></td>
+          <td><%= commande.designation[i] %></td>
+          <td><%= commande.quantite[i] %></td>
+          <td><%= commande.reduction_prix[i] %></td>
+        </tr>
+        </tr>
+        <% } %>
+        <% }) %>
+      </tbody>
+    </table>
+    <% Mes_commandes.forEach(commande => { %>
+    <div class="total">Total : <%= commande.prix_total %> f</div>
+    <% }) %>
+    <div class="envoi">
+      <form action="/mes_commandes" method="get">
+        <button>Retour</button>
+      </form>
+    </div>
+  </div>
+</div>
+<%- include('../includes/footer')  %>

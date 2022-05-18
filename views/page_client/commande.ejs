@@ -1,0 +1,30 @@
+<%- include('../includes/header')  %>
+<div class="voir_panier">
+  <div class="titre_panier">Historiques de mes commandes</div>
+  <div class="panier">
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Nombre de produit</th>
+          <th>Montant</th>
+          <th>Adresse de reception</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% Mes_commandes.forEach(commande => { %>
+        <tr>
+          <td><%= commande.date_commande %></td>
+          <td><%= commande.nombre_produit %></td>
+          <td><%= commande.prix_total %> f</td>
+          <td><%= commande.addresse_reception %></td>
+          <td><a href="/detail_mes_commandes/<%= commande._id %>">Voir</a></td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<%- include('../includes/footer')  %>

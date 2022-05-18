@@ -1,0 +1,112 @@
+:root {
+  --blue: #007bff;
+  --purple: #6f42c1;
+  --red: #dc3545;
+  --orange: #fd7e14;
+  --white: #fff;
+  --gray: #6c757d;
+  --gray-ciel: #6c757d9e;
+  --gray-dark: #343a40;
+  --primary: #007bff;
+  --secondary: #6c757d;
+  --danger: #dc3545;
+  --light: #f8f9fa;
+  --dark: #343a40;
+}
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 12px;
+  list-style: none;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+body {
+  background-color: var(--light);
+}
+header {
+  background-color: var(--primary);
+}
+header .nav_haut {
+  padding: 0 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--white);
+}
+header .nav_haut div {
+  padding: 1rem 1.5rem;
+}
+header .nav_haut div a {
+  color: var(--dark);
+  font-size: 1.1rem;
+  font-weight: 300;
+  padding: 0 1rem;
+}
+header .nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10%;
+}
+header .nav .logo {
+  color: var(--light);
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+header .nav .logo span {
+  color: var(--dark);
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+header .nav .menu ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+header .nav .menu li {
+  position: relative;
+  padding: 1rem 1.3rem;
+}
+header .nav .menu li a {
+  font-size: 1.3rem;
+  color: var(--light);
+}
+header .nav .menu li a:hover {
+  color: var(--dark);
+}
+header .nav .menu li .panier_qte {
+  position: absolute;
+  top: -10%;
+  left: 10%;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 1.5rem;
+  background-color: var(--light);
+  box-shadow: 0px 0px 1px var(--dark);
+}
+/* ***************************** */
+.aff_con {
+  width: 90px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.aff_con img {
+  width: 50%;
+  height: 60%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.aff_con span {
+  display: block;
+  width: 150px;
+  color: var(--dark);
+}

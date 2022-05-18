@@ -1,0 +1,47 @@
+<%- include('../includes/header')  %>
+<div class="barre_recherche">
+  <form action="" method="post">
+    <input type="text" placeholder="Rechercher produit...">
+    <button>Recherche</button>
+  </form>
+</div>
+
+<div class="voir_panier">
+  <div class="titre_panier">Commande des clients</div>
+  <div class="panier">
+    <table>
+      <thead>
+        <tr>
+          <th>Images</th>
+          <th>Nom</th>
+          <th>Prénom</th>
+          <th>Email</th>
+          <th>Téléphone</th>
+          <th>Nombre de produit</th>
+          <th>Montant</th>
+          <th>Adresse de reception</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if(typeof Commandes != 'undefined') { %>
+        <% Commandes.forEach(commande => { %>
+        <tr>
+          <td><img src="/images/client/<%= commande.photo_client %>" alt=""></td>
+          <td><%= commande.nom %></td>
+          <td><%= commande.prenom %></td>
+          <td><a href="mailto:<%= commande.email %>"><%= commande.email %></a></td>
+          <td><a href="tel:<%= commande.contact %>"><%= commande.contact %></a></td>
+          <td><%= commande.nombre_produit %></td>
+          <td><%= commande.prix_total %> f</td>
+          <td><%= commande.addresse_reception %></td>
+          <td><a href="/admin/comm_ad_detail_client/<%= commande._id %>">Voir</a></td>
+        </tr>
+        <% }) %>
+        <% } %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<%- include('../includes/footer')  %>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="Author" content="Attoukora">
+  <meta name="DESCRIPTION" content="Le portail officiel officiel du site de vente en ligne de tout type de produit. nous avons les produits bio naturel comme le beurre de karité">
+  <meta name="CREATION_DATE" content="17/05/2022">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/inscription.css">
+  <link rel="stylesheet" href="/css/creation.css">
+  <link rel="stylesheet" href="/css/detail.css">
+  <link rel="stylesheet" href="/css/panier.css">
+  <link rel="stylesheet" href="/css/footer.css">
+  <title>ATK.Ecommerce | <%= titre %></title>
+</head>
+
+<body>
+  <header>
+    <div class="nav_haut">
+      <div>
+        <a href="mailto:attoukoraange@gmail.com">Email: attoukoraange@gmail.com</a>
+        <a href="tel:+2250707965744">Tel: +225 0707 965 744</a>
+      </div>
+      <div class="email aff_con">
+        <% if (user) { %>
+        <img src="/images/client/<%= clientConnect.photo_client %>" alt="">
+        <div><span>Bienvenue <%= clientConnect.nom %></span></div>
+        <% } %>
+      </div>
+    </div>
+    <div class="nav">
+      <div class="logo">ATK<span>.Ecommerce</span></div>
+      <div class="menu">
+        <ul>
+          <% if (user) { %>
+          <li><a href="/personnalisation">Accueil</a></li>
+          <li><a href="/mes_commandes">Mes commandes</a></li>
+          <li><a href="/modifier_profil">Modifier Profil</a></li>
+          <% if (clientConnect.email == process.env.ADMIN_EMAIL) { %>
+          <li><a href="/admin/admin_archive">Archives</a></li>
+          <li><a href="/admin/admin_commande_client">Commande client</a></li>
+          <li><a href="/admin/admin_creer_produit">Créer produit</a></li>
+          <li><a href="/admin/admin_gerer_client">Gestion client</a></li>
+          <% } %>
+          <form action="/Logout?_method=DELETE" method="post">
+            <button>Déconnecté</button>
+          </form>
+          <% }else{%>
+          <li><a href="/">Accueil</a></li>
+          <li><a href="/connexion">Connexion</a></li>
+          <li><a href="/inscription">Inscription</a></li>
+          <%} %>
+          <li>
+            <a href="/panier">Panier:<span>
+                <% if (typeof prix_total != 'undefined') { %>
+                <%= prix_total %>
+                <% }else{%>
+                0
+                <%  } %>
+                F </span></a>
+            <div class="panier_qte">
+              <% if (typeof nombreT != 'undefined') { %>
+              <%= nombreT %>
+              <% }else{%>
+              0
+              <%  } %>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>

@@ -1,0 +1,62 @@
+<%- include('../includes/header')  %>
+<div class="barre_recherche">
+  <form action="" method="post">
+    <input type="text" placeholder="Rechercher produit...">
+    <button>Recherche</button>
+  </form>
+</div>
+<div class="formulaire_personne">
+  <div class="formulaire">
+    <div class="titre">Modifier le profil</div>
+    <form action="/modifier_profil" method="post" enctype="multipart/form-data">
+      <div>
+        <div class="input_champ">
+          <div>
+            <label for="photo">Photo</label>
+            <input type="file" value="<%= clientConnect.photo_client %>" id="photo" name="image" hidden>
+          </div>
+        </div>
+        <div class="input_champ">
+          <label for="">Nom:</label>
+          <input type="text" value="<%= clientConnect.nom %>" placeholder="Entrer votre nom..." name="nom">
+        </div>
+        <div class="input_champ">
+          <label for="">Prénom:</label>
+          <input type="text" value="<%= clientConnect.prenom %>" placeholder="Entrer votre prénom..." name="prenom">
+        </div>
+        <div class="input_champ">
+          <label for="">Date de naissance</label>
+          <input type="date" value="<%= clientConnect.date_naissance %>" placeholder="Entrer votre date de naissance..." name="date_naissance">
+        </div>
+        <div class="input_champ">
+          <label for="">Email:</label>
+          <input type="email" value="<%= clientConnect.email %>" placeholder="Entrer votre email..." name="email">
+        </div>
+        <div class="input_champ">
+          <label for="">Contact:</label>
+          <input type="tel" value="<%= clientConnect.contact %>" placeholder="Entrer votre Contact..." name="contact">
+        </div>
+        <div class="input_champ">
+          <label for="">Ville actuelle:</label>
+          <input type="text" value="<%= clientConnect.ville_actuelle %>" placeholder="Entrer votre ville actuelle..." name="ville_actuelle">
+        </div>
+        <div class="input_champ">
+          <label for="">Commune actuelle:</label>
+          <input type="text" value="<%= clientConnect.commune_actuelle %>" placeholder="Entrer votre commune actuelle..." name="commune_actuelle">
+        </div>
+        <div class="input_champ">
+          <label for="">Mot de passe:</label>
+          <input type="password" value="<%= clientConnect.password %>" placeholder="Entrer votre mot de passe..." name="password">
+        </div>
+        <div class="input_champ">
+          <label for="">Confirmation:</label>
+          <input type="password" value="<%= clientConnect.password %>" placeholder="Confimer votre mot de passe..." name="conf_password">
+        </div>
+        <div class="input_champ">
+          <button>Modifier</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<%- include('../includes/footer')  %>

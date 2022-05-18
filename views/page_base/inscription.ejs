@@ -1,0 +1,62 @@
+<%- include('../includes/header')  %>
+<div class="barre_recherche">
+  <form action="" method="post">
+    <input type="text" placeholder="Rechercher produit...">
+    <button>Recherche</button>
+  </form>
+</div>
+<div class="formulaire_personne">
+  <div class="formulaire">
+    <div class="titre">Inscription</div>
+    <form action="/inscription" method="post" enctype="multipart/form-data">
+      <div>
+        <div class="input_champ">
+          <div>
+            <label for="photo">Photo</label>
+            <input type="file" id="photo" name="image" hidden required>
+          </div>
+        </div>
+        <div class="input_champ">
+          <label for="">Nom:</label>
+          <input type="text" placeholder="Entrer votre nom..." name="nom" minlength="3" maxlength="15" pattern="[a-zA-z]+" required>
+        </div>
+        <div class="input_champ">
+          <label for="">Prénom:</label>
+          <input type="text" placeholder="Entrer votre prénom..." name="prenom" minlength="3" maxlength="15"  required>
+        </div>
+        <div class="input_champ">
+          <label for="">Date de naissance</label>
+          <input type="date" placeholder="Entrer votre date de naissance..." name="date_naissance" required>
+        </div>
+        <div class="input_champ">
+          <label for="">Email:</label>
+          <input type="email" placeholder="Entrer votre email..." name="email" required>
+        </div>
+        <div class="input_champ">
+          <label for="">Contact:</label>
+          <input type="tel" placeholder="Entrer votre Contact..." name="contact" min="10" max="10" required>
+        </div>
+        <div class="input_champ">
+          <label for="">Ville actuelle:</label>
+          <input type="text" placeholder="Entrer votre ville actuelle..." name="ville_actuelle" required>
+        </div>
+        <div class="input_champ">
+          <label for="">Commune actuelle:</label>
+          <input type="text" placeholder="Entrer votre commune actuelle..." name="commune_actuelle" required>
+        </div>
+        <div class="input_champ">
+          <label for="">Mot de passe:</label>
+          <input type="password" placeholder="Entrer votre mot de passe..." name="password" min="5" pattern="[a-z0-9]{4,}" required>
+        </div>
+        <div class="input_champ">
+          <label for="">Confirmation:</label>
+          <input type="password" placeholder="Confimer votre mot de passe..." name="conf_password" min="5" required>
+        </div>
+        <div class="input_champ">
+          <button>Inscription</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<%- include('../includes/footer')  %>

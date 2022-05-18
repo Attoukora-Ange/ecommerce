@@ -1,0 +1,27 @@
+.formulaire_personne .input_champ select{
+    width: 100%;
+    height: 2.5rem;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    padding: 0 1rem;
+}
+.formulaire_personne .input_champ textarea{
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 15rem;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    padding: 1rem;
+}
+.formulaire_personne .input_champ .photo{
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.formulaire_personne .input_champ .photo input{
+    padding: 0.5rem 0rem;
+    cursor: pointer;
+    
+}

@@ -1,0 +1,35 @@
+footer {
+  margin-top: 10%;
+}
+footer .footer_menu {
+  background-color: var(--purple);
+  padding: 2% 10%;
+  display: flex;
+  justify-content: space-between;
+}
+footer .footer_menu .left .logo span {
+  color: var(--light);
+  font-weight: 700;
+}
+footer .footer_menu .left .logo,
+footer .footer_menu .left .logo span,
+footer .footer_menu .left div:not(.logo, .logo span),
+footer .footer_menu .middle div,
+footer .footer_menu .right .partenaire {
+  font-size: 1.4rem;
+}
+footer .footer_menu .left div a,
+footer .footer_menu .middle div a,
+footer .footer_menu .right div:not(.partenaire) {
+  font-size: 1.2rem;
+  color: var(--light);
+}
+footer .footer_menu .left div a:hover,
+footer .footer_menu .middle div a:hover {
+  color: var(--dark);
+}
+.copy {
+  display: flex;
+  justify-content: center;
+  color: var(--dark);
+}

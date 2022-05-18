@@ -1,0 +1,30 @@
+<%- include('../includes/header')  %>
+<div class="barre_recherche">
+  <form action="" method="post">
+    <input type="text" placeholder="Rechercher produit...">
+    <button>Recherche</button>
+  </form>
+</div>
+<div class="formulaire_personne">
+  <div class="formulaire">
+    <div class="titre">Connexion</div>
+    <form action="/connexion" method="post">
+      <div>
+        <div class="input_champ">
+        </div>
+        <div class="input_champ">
+          <label for="">Email</label>
+          <input type="email" placeholder="Entrer votre email..." name="email">
+        </div>
+        <div class="input_champ">
+          <label for="">Mot de passe:</label>
+          <input type="password" placeholder="Entrer votre mot de passe..." name="password">
+        </div>
+        <div class="input_champ">
+          <button>Connexion</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<%- include('../includes/footer')  %>

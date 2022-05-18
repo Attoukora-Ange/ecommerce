@@ -1,0 +1,51 @@
+<%- include('../includes/header')  %>
+<div class="barre_recherche">
+  <form action="" method="post">
+    <input type="text" placeholder="Rechercher produit...">
+    <button>Recherche</button>
+  </form>
+</div>
+<div class="voir_panier">
+  <div class="titre_panier">Mes utilisateurs</div>
+  <div class="panier">
+    <table>
+      <thead>
+        <tr>
+          <th>Images</th>
+          <th>Nom</th>
+          <th>Prénom</th>
+          <th>Date de naissance</th>
+          <th>Email</th>
+          <th>Téléphone</th>
+          <th>Ville</th>
+          <th>Commune</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+          <% toutClient.forEach(client => {%>
+        <tr>
+          <td><img src="/images/client/<%= client.photo_client %>" alt=""></td>
+          <td><%= client.nom %></td>
+          <td><%= client.prenom %></td>
+          <td><%= client.date_naissance %></td>
+          <td><a href="mailto:<%= client.email %>"><%= client.email %></a></td>
+          <td><a href="tel:<%= client.contact %>"><%= client.contact %></a></td>
+          <td><%= client.ville_actuelle %></td>
+          <td><%= client.commune_actuelle %></td>
+          <td>
+              <% if (client.email != process.env.ADMIN_EMAIL) { %>
+                <form action="/admin/supprimer/<%= client._id%>?_method=DELETE" method="post">
+              <button>Supprimer</button>
+            </form>
+              <% } %>
+           
+        </td>
+    </tr>
+    <%  }); %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<%- include('../includes/footer')  %>
