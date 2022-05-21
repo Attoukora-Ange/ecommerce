@@ -110,3 +110,95 @@ header .nav .menu li .panier_qte {
   width: 150px;
   color: var(--dark);
 }
+@media only screen and (max-width: 1350px) {
+  body{
+    background-color: red;
+  }
+  header .nav .menu li {
+    position: relative;
+    padding: 1rem 0.5rem;
+}
+}
+@media only screen and (max-width: 1160px) {
+  body{
+    background-color: green;
+  }
+  header .nav {
+    display: block;
+    margin: auto;
+    padding: 0 10%;
+}
+header .nav .logo {
+    color: var(--light);
+    font-size: 1.1rem;
+    font-weight: 300;
+    text-align: center;
+}
+header .nav .menu li a {
+  font-size: 1rem;
+  color: var(--light);
+}
+.menu_general .left {
+  display: none;
+  background-color: var(--red);
+  padding: 0 10%;
+}
+.barre_recherche form input {
+  height: 3rem;
+  width: 60% !important;
+  padding: 0 1rem;
+  font-size: 1.3rem;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+.ptit_cont .btn_detail {
+  padding: 0.3rem 1rem;
+  background-color: var(--blue);
+  font-size: 1.2rem;
+  font-weight: 500;
+  width: 60% !important;
+  text-align: center;
+  border-radius: 5px;
+  margin: auto;
+}
+.all_produits .produit .contenue .ptit_cont {
+  width: 60% !important;
+  position: relative;
+  padding: 1rem 0;
+}
+footer .footer_menu {
+  background-color: var(--purple);
+  padding: 2% 10%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+header .nav_haut {
+  padding: 0 10%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: var(--white);
+}
+.aff_con {
+  width: 100% !important;
+  height: 100%;
+}
+.aff_con img {
+  width: 10%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+header .nav_haut div {
+  padding: 1rem 1.5rem;
+  margin: auto;
+}
+.nav_haut + div{
+  margin: auto;
+}
+.left{
+  margin-bottom: 1rem;
+}
+}
