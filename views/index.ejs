@@ -124,7 +124,7 @@
       <% all_produit.forEach(produit => { %>
       <% if (produit.categorie == 'Electronique') { %>
       <div class="ptit_cont">
-        <div class="image"><img src="images/produits/<%= produit.photo_produit%>" alt=""></div>
+        <div class="image"><img src="<%= produit.photo_produit%>" alt=""></div>
         <div class="pour_reduction"> - <%= produit.pourcentage_reduction %> %</div>
         <div class="nom_produit"><%= produit.designation %></div>
         <div class="anc_prix_produit">Prix : <%= produit.prix %> f</div>
@@ -143,7 +143,7 @@
       <% all_produit.forEach(produit => { %>
       <% if (produit.categorie == 'Mode pour homme') { %>
       <div class="ptit_cont">
-        <div class="image"><img src="images/produits/<%= produit.photo_produit%>" alt=""></div>
+        <div class="image"><img src="<%= produit.photo_produit%>" alt=""></div>
         <div class="pour_reduction"> - <%= produit.pourcentage_reduction %> %</div>
         <div class="nom_produit"><%= produit.designation %></div>
         <div class="anc_prix_produit">Prix : <%= produit.prix %> f</div>
@@ -162,7 +162,7 @@
       <% all_produit.forEach(produit => { %>
       <% if (produit.categorie == 'Mode pour femme') { %>
       <div class="ptit_cont">
-        <div class="image"><img src="images/produits/<%= produit.photo_produit%>" alt=""></div>
+        <div class="image"><img src="<%= produit.photo_produit%>" alt=""></div>
         <div class="pour_reduction"> - <%= produit.pourcentage_reduction %> %</div>
         <div class="nom_produit"><%= produit.designation %></div>
         <div class="anc_prix_produit">Prix : <%= produit.prix %> f</div>
@@ -181,7 +181,7 @@
       <% all_produit.forEach(produit => { %>
       <% if (produit.categorie == 'Cosmétique') { %>
       <div class="ptit_cont">
-        <div class="image"><img src="images/produits/<%= produit.photo_produit%>" alt=""></div>
+        <div class="image"><img src="<%= produit.photo_produit%>" alt=""></div>
         <div class="pour_reduction"> - <%= produit.pourcentage_reduction %> %</div>
         <div class="nom_produit"><%= produit.designation %></div>
         <div class="anc_prix_produit">Prix : <%= produit.prix %> f</div>
