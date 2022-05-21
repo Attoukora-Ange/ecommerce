@@ -111,18 +111,13 @@ header .nav .menu li .panier_qte {
   color: var(--dark);
 }
 @media only screen and (max-width: 1350px) {
-  body{
-    background-color: red;
-  }
   header .nav .menu li {
     position: relative;
     padding: 1rem 0.5rem;
 }
 }
 @media only screen and (max-width: 1160px) {
-body{
-    background-color: green;
-  }
+
   header .nav {
     display: block;
     margin: auto;
@@ -207,5 +202,38 @@ header .nav_haut div {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+}
+.detail_produit .titre_detail {
+  text-align: center;
+  font-size: 3.5rem !important;
+  font-weight: 500;
+  padding: 1rem 0;
+}
+.detail_produit .detail .right .cat_produit {
+  font-size: 2.5rem !important;
+  padding: 1rem 0;
+}
+.detail_produit .detail .right .mar_produit {
+  font-size: 2rem !important;
+  padding: 1rem 0;
+}
+.detail_produit .detail .right .pour_produit {
+  font-size: 1.5rem !important;
+  padding: 1rem 0;
+}
+
+.detail_produit .detail .right .ajout_produit button {
+  font-size: 1.2rem !important;
+  padding: 0.2rem;
+  border-radius: 5px;
+}
+.voir_panier .panier .envoi form input {
+  width: 75% !important;
+  height: 2.5rem;
+  border-radius: 5px;
+  margin: 0.5rem !important;
+  outline: none;
+  border: none;
+  padding: 0 1rem;
 }
 }
