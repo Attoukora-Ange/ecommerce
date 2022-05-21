@@ -16,7 +16,7 @@ const UploadFonction = require("../function").UploadFonction();
 //     cb(null, Date.now() + "_" + file.originalname.split(" ").join("_"));
 //   },
 // });
-// const upload = multer({ storage: stockage }).single("image");
+// const upload = multer({ storage: stockage}).single("image");
 
 // **************************************************
 
@@ -36,7 +36,7 @@ Route.get("/connexion", Isguest, Config.getConnexion);
 Route.get("/inscription", Config.getInscription);
 const cloudinary = require('../../helper/uploadImage');
 
-// ********** POST *********************************
+// ********** POST 1 *********************************
 
 Route.post("/inscription", UploadFonction, Config.postInscription);
 Route.post("/modifier_profil", UploadFonction, Config.postModi_profil);
