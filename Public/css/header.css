@@ -120,7 +120,7 @@ header .nav .menu li .panier_qte {
 }
 }
 @media only screen and (max-width: 1160px) {
-  body{
+body{
     background-color: green;
   }
   header .nav {
@@ -188,6 +188,7 @@ header .nav_haut {
 }
 .aff_con img {
   width: 10%;
+
   object-fit: cover;
   border-radius: 50%;
 }
@@ -200,5 +201,11 @@ header .nav_haut div {
 }
 .left{
   margin-bottom: 1rem;
+}
+.all_produits .produit .contenue {
+    padding: 0 10%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 }
