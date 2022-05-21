@@ -5,6 +5,7 @@ const Commande = require("../../Models/Commandes");
 const Produit = require("../../Models/Produits");
 const Gestion = require("../../Models/Gestion");
 const Cart = require("../function").FunctionPanier;
+const cloudinary = require('../../helper/uploadImage');
 
 module.exports.getIndex = async (req, res) => {
   if (req.user) {
@@ -411,7 +412,8 @@ module.exports.postModi_profil = async (req, res) => {
       }
     }
   }
-  let image = req.file.filename;
+  const result = await cloudinary.uploader.upload(req.file.path);
+  let image = result.secure_url;
   photo_client = image;
   const hashPassword = await bcrypt.genSalt(10);
   password = await bcrypt.hash(password, hashPassword);
@@ -485,9 +487,9 @@ module.exports.postInscription = async (req, res) => {
       console.log("Email existe deja veuillez changer de email");
       return res.redirect("/inscription");
     }
-
-    let image = req.file.filename;
-    photo_client = image;
+    const result = await cloudinary.uploader.upload(req.file.path);
+    // let image = req.file.filename;
+    photo_client = result.secure_url;
     const hashPassword = await bcrypt.genSalt(10);
     password = await bcrypt.hash(password, hashPassword);
 

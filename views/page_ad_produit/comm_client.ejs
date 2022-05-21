@@ -7,7 +7,7 @@
 </div>
 
 <div class="voir_panier">
-  <div class="titre_panier">Commande des clients</div>
+  <div class="titre_panier">Commande des clients en attente</div>
   <div class="panier">
     <table>
       <thead>
@@ -27,7 +27,7 @@
         <% if(typeof Commandes != 'undefined') { %>
         <% Commandes.forEach(commande => { %>
         <tr>
-          <td><img src="/images/client/<%= commande.photo_client %>" alt=""></td>
+          <td><img src="<%= commande.photo_client %>" alt=""></td>
           <td><%= commande.nom %></td>
           <td><%= commande.prenom %></td>
           <td><a href="mailto:<%= commande.email %>"><%= commande.email %></a></td>

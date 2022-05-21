@@ -4,6 +4,10 @@ const Produit = require("../../Models/Produits");
 const Archive = require("../../Models/Archive");
 const Gestion = require("../../Models/Gestion");
 const bcrypt = require("bcryptjs");
+const cloudinary = require('../../helper/uploadImage');
+const path = require('path');
+
+
 module.exports.getAdmin_archive = async (req, res) => {
   const id = req.user;
   const clientConnect = await Users.findById({ _id: id });
@@ -92,8 +96,10 @@ module.exports.postValider_commande = async (req, res) => {
 
   res.redirect("/admin/admin_commande_client");
 };
-module.exports.postCreer_produit = (req, res) => {
+module.exports.postCreer_produit = async (req, res) => {
+ 
   if (typeof req.file == "undefined") {
+  
     return res.redirect("/admin/admin_creer_produit");
   }
   for (const my_body in req.body) {
@@ -105,7 +111,7 @@ module.exports.postCreer_produit = (req, res) => {
       }
     }
   }
-
+  const result = await cloudinary.uploader.upload(req.file.path);
   let {
     photo_produit,
     designation,
@@ -117,7 +123,8 @@ module.exports.postCreer_produit = (req, res) => {
     description,
     quantite,
   } = req.body;
-  photo_produit = req.file.filename;
+  // photo_produit = req.file.filename;
+  photo_produit = result.secure_url;
 
   reduction_prix =
     Number(prix) -

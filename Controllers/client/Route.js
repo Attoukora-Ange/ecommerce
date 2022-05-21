@@ -5,17 +5,18 @@ const User = require("../../Models/Client");
 const localStrategie = require("./Auth");
 const Route = express.Router();
 const UploadFonction = require("../function").UploadFonction();
+
 // ********************** UPLOAD *************************
 
-const stockage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, "public/images/client");
-  },
-  filename: (req, file, cb) => {
-    cb(null, Date.now() + "_" + file.originalname.split(" ").join("_"));
-  },
-});
-const upload = multer({ storage: stockage }).single("image");
+// const stockage = multer.diskStorage({
+//   destination: (req, file, cb) => {
+//     cb(null, "public/images/client");
+//   },
+//   filename: (req, file, cb) => {
+//     cb(null, Date.now() + "_" + file.originalname.split(" ").join("_"));
+//   },
+// });
+// const upload = multer({ storage: stockage }).single("image");
 
 // **************************************************
 
@@ -33,6 +34,7 @@ Route.get("/modifier_profil", LoggIn, Config.getModifier_profil);
 Route.get("/panier", Config.getPanier);
 Route.get("/connexion", Isguest, Config.getConnexion);
 Route.get("/inscription", Config.getInscription);
+const cloudinary = require('../../helper/uploadImage');
 
 // ********** POST *********************************
 

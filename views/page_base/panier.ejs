@@ -25,7 +25,7 @@
       <tbody>
         <% panier.forEach(mon_panier => { %>
         <tr>
-          <td><img src="images/produits/<%= mon_panier.photo_produit %>" alt=""></td>
+          <td><img src="<%= mon_panier.photo_produit %>" alt=""></td>
           <td><%= mon_panier.designation %></td>
           <td>
             <form action="/reduct_panier" method="post">

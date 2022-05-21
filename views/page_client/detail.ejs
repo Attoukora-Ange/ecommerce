@@ -16,7 +16,7 @@
         <tr>
           <% for( let i = 0; i < commande.photo_produit.length; i++ ) { %>
         <tr>
-          <td><img src="/images/produits/<%= commande.photo_produit[i] %>" alt=""></td>
+          <td><img src="<%= commande.photo_produit[i] %>" alt=""></td>
           <td><%= commande.designation[i] %></td>
           <td><%= commande.quantite[i] %></td>
           <td><%= commande.reduction_prix[i] %></td>

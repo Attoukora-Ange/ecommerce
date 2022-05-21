@@ -25,7 +25,7 @@
       <tbody>
           <% toutClient.forEach(client => {%>
         <tr>
-          <td><img src="/images/client/<%= client.photo_client %>" alt=""></td>
+          <td><img src="<%= client.photo_client %>" alt=""></td>
           <td><%= client.nom %></td>
           <td><%= client.prenom %></td>
           <td><%= client.date_naissance %></td>

@@ -2,28 +2,31 @@ const multer = require("multer");
 module.exports.UploadFonction = () => {
   // ********************** UPLOAD *************************
 
-  const stockage = multer.diskStorage({
-    destination: (req, file, cb) => {
-      cb(null, "public/images/client");
-    },
-    filename: (req, file, cb) => {
-      cb(null, Date.now() + "_" + file.originalname.split(" ").join("_"));
-    },
-  });
+  const stockage = multer.diskStorage({});
+  // const stockage = multer.diskStorage({
+  //   destination: (req, file, cb) => {
+  //     cb(null, "public/images/client");
+  //   },
+  //   filename: (req, file, cb) => {
+  //     cb(null, Date.now() + "_" + file.originalname.split(" ").join("_"));
+  //   },
+  // });
 
   return multer({ storage: stockage }).single("image");
 };
-module.exports.UploadFonctionProduit = () => {
-  // ********************** UPLOAD *************************
 
-  const stockage = multer.diskStorage({
-    destination: (req, file, cb) => {
-      cb(null, "public/images/produits");
-    },
-    filename: (req, file, cb) => {
-      cb(null, Date.now() + "_" + file.originalname.split(" ").join("_"));
-    },
-  });
+// ********************** UPLOAD *************************
+module.exports.UploadFonctionProduit = () => {
+
+  const stockage = multer.diskStorage({});
+//   const stockages = multer.diskStorage({
+//     destination: (req, file, cb) => {
+//       cb(null, "public/images/produits");
+//     },
+//     filename: (req, file, cb) => {
+//       cb(null, Date.now() + "_" + file.originalname.split(" ").join("_"));
+//     },
+//   });
 
   return multer({ storage: stockage }).single("image");
 };

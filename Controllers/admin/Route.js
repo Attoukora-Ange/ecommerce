@@ -2,6 +2,7 @@ const express = require("express");
 const Config = require("./Config");
 const Route = express.Router();
 const UploadFonction = require("../function").UploadFonctionProduit();
+const cloudinary = require('../../helper/uploadImage');
 
 Route.get("/admin_archive", LoggIn, Config.getAdmin_archive);
 Route.get("/admin_commande_client", LoggIn, Config.getAdmin_commande_client);
