@@ -205,35 +205,42 @@ header .nav_haut div {
 }
 .detail_produit .titre_detail {
   text-align: center;
-  font-size: 3.5rem !important;
+  font-size: 2rem !important;
   font-weight: 500;
   padding: 1rem 0;
 }
 .detail_produit .detail .right .cat_produit {
-  font-size: 2.5rem !important;
+  font-size: 1.8rem !important;
   padding: 1rem 0;
 }
 .detail_produit .detail .right .mar_produit {
-  font-size: 2rem !important;
+  font-size: 1.4rem !important;
   padding: 1rem 0;
 }
 .detail_produit .detail .right .pour_produit {
-  font-size: 1.5rem !important;
-  padding: 1rem 0;
+  font-size: 1.2rem !important;
 }
 
 .detail_produit .detail .right .ajout_produit button {
-  font-size: 1.2rem !important;
+  font-size: 1.1rem !important;
   padding: 0.2rem;
   border-radius: 5px;
 }
+.detail_produit .detail .right .ajout_produit button:hover {
+ background-color: var(--blue);
+}
 .voir_panier .panier .envoi form input {
   width: 75% !important;
-  height: 2.5rem;
-  border-radius: 5px;
   margin: 0.5rem !important;
-  outline: none;
-  border: none;
-  padding: 0 1rem;
+
+}
+.voir_panier tbody td:first-child img {
+  height: 40px !important;
+}
+.voir_panier .titre_panier {
+  font-size: 1.5rem !important;
+}
+.detail_produit .aff_desc_produit {
+  font-size: 1.2rem !important;
 }
 }
